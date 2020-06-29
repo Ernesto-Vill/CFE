@@ -12,16 +12,17 @@ import javax.persistence.Table;
 public class ZonaEntity implements Serializable {
 
 	@Id
-	@Column(name = "Id_Zon", nullable = false, unique = true)
-	private String idZon;
-	@Column(name = "Nom_Zon", nullable = false, unique = false)
+	@Column(name = "Id_Zon", columnDefinition = "Int(3)", nullable = false, unique = true)
+	private Long idZon;
+	@Column(name = "Nom_Zon", columnDefinition = "NVARCHAR(45)", nullable = false, unique = true)
 	private String nomZon;
 
-	public String getIdZon() {
+	
+	public Long getIdZon() {
 		return idZon;
 	}
 
-	public void setIdZon(String idZon) {
+	public void setIdZon(Long idZon) {
 		this.idZon = idZon;
 	}
 
