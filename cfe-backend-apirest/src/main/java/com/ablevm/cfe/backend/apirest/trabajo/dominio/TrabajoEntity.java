@@ -14,27 +14,26 @@ import javax.persistence.Table;
 public class TrabajoEntity implements Serializable{
 
 
-
 	@Id
-	@Column(name = "Id_Trab", nullable = false, unique = true)
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idTrab;
+	@Column(name = "Id_Trab",columnDefinition="Int(2)", nullable = false, unique = true)
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long idTrab;
 	
-	@Column(name = "Nom_Trab", nullable = false, unique = false)
+	@Column(name = "Nom_Trab",columnDefinition="varchar(20)", nullable = false, unique = false)
 	private String nomTrab;
 	
-	@Column(name = "Des_Trab", nullable = false, unique = false)
+	@Column(name = "Des_Trab",columnDefinition="varchar(45)", nullable = false, unique = false)
 	private String desTrab;
 	
 	
 	
-	public int getIdTrab() {
+	public Long getIdTrab() {
 		return idTrab;
 	}
 
 
 
-	public void setIdTrab(int idTrab) {
+	public void setIdTrab(Long idTrab) {
 		this.idTrab = idTrab;
 	}
 
