@@ -14,14 +14,14 @@ import javax.persistence.Table;
 public class MaterialEntity implements Serializable {
 
 	@Id
-	@Column(name = "Id_Mat", nullable = false, unique = true)
+	@Column(name = "Id_Mat",columnDefinition="int(3)", nullable = false, unique = true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idMat;
-	@Column(name = "Nom_Mat", nullable = false, unique = false)
+	@Column(name = "Nom_Mat",columnDefinition="varchar(45)", nullable = false, unique = false)
 	private String nomMat;
-	@Column(name = "Uni_Mat", nullable = false, unique = false)
+	@Column(name = "Uni_Mat",columnDefinition="varchar(15)", nullable = false, unique = false)
 	private String uniMat;
-	@Column(name = "Desc_Mat", nullable = false, unique = false)
+	@Column(name = "Desc_Mat",columnDefinition="varchar(45)", nullable = false, unique = false)
 	private String descMat;
 
 	public int getIdMat() {

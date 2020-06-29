@@ -13,22 +13,22 @@ public class UsuarioEntity implements Serializable{
 
 
 	@Id
-	@Column(name = "Id_Usu", nullable = false, unique = true)
+	@Column(name = "Id_Usu",columnDefinition="varchar(10)", nullable = false, unique = true)
 	private String idUsu;
 	
-	@Column(name = "UserName_Usu", nullable = false, unique = true)
+	@Column(name = "UserName_Usu",columnDefinition="varchar(10)", nullable = false, unique = true)
 	private String userNameUsu;
 	
-	@Column(name = "Nom_Usu", nullable = false, unique = false)
+	@Column(name = "Nom_Usu",columnDefinition="varchar(25)", nullable = false, unique = false)
 	private String nomUsu;
 	
-	@Column(name = "ApPa_Usu", nullable = false, unique = false)
+	@Column(name = "ApPa_Usu",columnDefinition="varchar(15)", nullable = false, unique = false)
 	private String apPaUsu;
 	
-	@Column(name = "ApMa_Usu", nullable = false, unique = false)
+	@Column(name = "ApMa_Usu",columnDefinition="varchar(15)", nullable = false, unique = false)
 	private String apMaUsu;
 	
-	@Column(name = "Pass_Usu", nullable = false, unique = false)
+	@Column(name = "Pass_Usu",columnDefinition="varchar(16)", nullable = false, unique = false)
 	private String passUsu;
 	
 	

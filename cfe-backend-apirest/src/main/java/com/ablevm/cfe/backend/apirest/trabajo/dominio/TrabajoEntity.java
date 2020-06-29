@@ -16,7 +16,7 @@ public class TrabajoEntity implements Serializable{
 
 	@Id
 	@Column(name = "Id_Trab",columnDefinition="Int(2)", nullable = false, unique = true)
-	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idTrab;
 	
 	@Column(name = "Nom_Trab",columnDefinition="varchar(20)", nullable = false, unique = false)

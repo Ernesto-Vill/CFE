@@ -15,14 +15,14 @@ public class RoleEntity implements Serializable{
 
 
 	@Id
-	@Column(name = "Id_Rol", nullable = false, unique = true)
+	@Column(name = "Id_Rol",columnDefinition="int(3)", nullable = false, unique = true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idRol;
 	
-	@Column(name = "Nom_Rol", nullable = false, unique = false)
+	@Column(name = "Nom_Rol",columnDefinition="varchar(16)", nullable = false, unique = false)
 	private String nomRol;
 	
-	@Column(name = "Desc_Rol", nullable = false, unique = false)
+	@Column(name = "Desc_Rol",columnDefinition="varchar(45)", nullable = false, unique = false)
 	private String descRol;
 
 
