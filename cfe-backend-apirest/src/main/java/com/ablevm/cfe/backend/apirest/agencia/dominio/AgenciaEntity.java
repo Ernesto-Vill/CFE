@@ -12,16 +12,18 @@ import javax.persistence.Table;
 public class AgenciaEntity implements Serializable {
 
 	@Id
-	@Column(name = "Id_Age", nullable = false, unique = true)
-	private String idAge;
-	@Column(name = "Nom_Age", nullable = false, unique = false)
+	@Column(name = "Id_Age", columnDefinition = "Int(3)", nullable = false, unique = true)
+	private Long idAge;
+	@Column(name = "Nom_Age", columnDefinition = "nvarchar(1)", nullable = false, unique = true)
 	private String nomAge;
 
-	public String getIdAge() {
+
+
+	public Long getIdAge() {
 		return idAge;
 	}
 
-	public void setIdAge(String idAge) {
+	public void setIdAge(Long idAge) {
 		this.idAge = idAge;
 	}
 
