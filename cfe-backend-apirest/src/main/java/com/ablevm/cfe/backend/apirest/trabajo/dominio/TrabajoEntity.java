@@ -13,6 +13,10 @@ import javax.persistence.Table;
 @Table(name = "trabajo")
 public class TrabajoEntity implements Serializable{
 
+<<<<<<< HEAD
+=======
+ss
+>>>>>>> branch 'master' of https://github.com/Ernesto-Vill/CFE.git
 
 	@Id
 	@Column(name = "Id_Trab", columnDefinition = "Int(2)", nullable = false, unique = true)
