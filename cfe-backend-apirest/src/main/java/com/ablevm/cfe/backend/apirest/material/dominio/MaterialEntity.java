@@ -23,11 +23,6 @@ public class MaterialEntity implements Serializable {
 	private String uniMat;
 	@Column(name = "Desc_Mat", columnDefinition = "varchar(45)", nullable = true, unique = false)
 	private String descMat;
-	
-<<<<<<< HEAD
-=======
-	ss
->>>>>>> branch 'master' of https://github.com/Ernesto-Vill/CFE.git
 
 
 	public Long getIdMat() {
