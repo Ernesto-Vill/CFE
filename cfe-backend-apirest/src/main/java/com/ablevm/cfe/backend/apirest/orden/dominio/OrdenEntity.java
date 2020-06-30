@@ -10,46 +10,46 @@ import javax.persistence.*;
 public class OrdenEntity implements Serializable {
 
 	@Id
-	@Column(name = "Id_Ord", length = 5, nullable = false, unique = true)
+	@Column(name = "Id_Ord", columnDefinition = "varchar(5)", nullable = false, unique = true)
 	private String idOrd;
-	@Column(name = "No_Ord", columnDefinition = "nvarchar(5)", nullable = true, unique = true)
-	private int noOrd;
-	@Column(name = "Fech_Ord", nullable = false)
+	@Column(name = "No_Ord", columnDefinition = "varchar(3)", nullable = true, unique = true)
+	private Long noOrd;
+	@Column(name = "Fech_Ord", nullable = false, unique = false)
 	@Temporal(TemporalType.DATE)
 	private Date fechOrd;
-	@Column(name = "Rpu_Ord")
-	private int repuOrd;
-	@Column(name = "NCuen_Ord", nullable = false)
+	@Column(name = "Rpu_Ord", columnDefinition = "Int", nullable = false, unique = false)
+	private Long repuOrd;
+	@Column(name = "NCuen_Ord", columnDefinition = "varchar(17)", nullable = false, unique = false)
 	private String nCuentOrd;
-	@Column(name = "Tarifa_Ord", nullable = false)
-	private int tarifaOrd;
-	@Column(name = "T02_Ord")
+	@Column(name = "Tarifa_Ord", columnDefinition = "Int", nullable = false, unique = false)
+	private Long tarifaOrd;
+	@Column(name = "T02_Ord", columnDefinition = "varchar(4)", nullable = true, unique = false)
 	private String t02Ord;
-	@Column(name = "Giro_Ord")
+	@Column(name = "Giro_Ord", columnDefinition = "varchar(4)", nullable = true, unique = false)
 	private String giroOrd;
-	@Column(name = "Hilos_Ord")
+	@Column(name = "Hilos_Ord", columnDefinition = "varchar(2)", nullable = true, unique = false)
 	private String hilosOrd;
-	@Column(name = "Fase_Ord")
+	@Column(name = "Fase_Ord", columnDefinition = "varchar(2)", nullable = true, unique = false)
 	private String faseOrd;
-	@Column(name = "Anom_Ord")
+	@Column(name = "Anom_Ord", columnDefinition = "varchar(40)", nullable = true, unique = false)
 	private String anom_Ord;
-	@Column(name = "MedIqz_Ord")
+	@Column(name = "MedIqz_Ord", columnDefinition = "varchar(10)", nullable = true, unique = false)
 	private String medIqzOrd;
-	@Column(name = "MedDer_Ord")
+	@Column(name = "MedDer_Ord", columnDefinition = "varchar(10)", nullable = true, unique = false)
 	private String medDerOrd;
-	@Column(name = "HoraInc_Ord")
+	@Column(name = "HoraInc_Ord", nullable = true, unique = false)
 	@Temporal(TemporalType.TIME)
 	private Date horaIncOrd;
-	@Column(name = "HoraFin_Ord")
+	@Column(name = "HoraFin_Ord", nullable = true, unique = false)
 	@Temporal(TemporalType.TIME)
 	private Date horaFinOrd;
-	@Column(name = "Atend_Ord", nullable = false)
+	@Column(name = "Atend_Ord", columnDefinition = "varchar(45)", nullable = false, unique = false)
 	private String atendOrd;
-	@Column(name = "Resib_Ord")
+	@Column(name = "Resib_Ord", columnDefinition = "varchar(45)", nullable = true, unique = false)
 	private String resibOrd;
-	@Column(name = "Rpe_Ord")
+	@Column(name = "Rpe_Ord", columnDefinition = "varchar(10)", nullable = true, unique = false)
 	private String rpeOrd;
-	@Column(name = "IdentN_Ord")
+	@Column(name = "IdentN_Ord", columnDefinition = "varchar(10)", nullable = true, unique = false)
 	private String identNOrd;
 
 	public String getIdOrd() {
@@ -60,12 +60,20 @@ public class OrdenEntity implements Serializable {
 		this.idOrd = idOrd;
 	}
 
-	public int getNoOrd() {
+	public Long getNoOrd() {
 		return noOrd;
 	}
 
-	public void setNoOrd(int noOrd) {
+	public void setNoOrd(Long noOrd) {
 		this.noOrd = noOrd;
+	}
+
+	public void setRepuOrd(Long repuOrd) {
+		this.repuOrd = repuOrd;
+	}
+
+	public void setTarifaOrd(Long tarifaOrd) {
+		this.tarifaOrd = tarifaOrd;
 	}
 
 	public Date getFechOrd() {
@@ -76,12 +84,12 @@ public class OrdenEntity implements Serializable {
 		this.fechOrd = fechOrd;
 	}
 
-	public int getRepuOrd() {
+	public Long getRepuOrd() {
 		return repuOrd;
 	}
 
-	public void setRepuOrd(int repuOrd) {
-		this.repuOrd = repuOrd;
+	public Long getTarifaOrd() {
+		return tarifaOrd;
 	}
 
 	public String getnCuentOrd() {
@@ -90,14 +98,6 @@ public class OrdenEntity implements Serializable {
 
 	public void setnCuentOrd(String nCuentOrd) {
 		this.nCuentOrd = nCuentOrd;
-	}
-
-	public int getTarifaOrd() {
-		return tarifaOrd;
-	}
-
-	public void setTarifaOrd(int tarifaOrd) {
-		this.tarifaOrd = tarifaOrd;
 	}
 
 	public String getT02Ord() {

@@ -15,18 +15,18 @@ public class TrabajoEntity implements Serializable{
 
 
 	@Id
-	@Column(name = "Id_Trab",columnDefinition="Int(2)", nullable = false, unique = true)
+	@Column(name = "Id_Trab", columnDefinition = "Int(2)", nullable = false, unique = true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idTrab;
 	
-	@Column(name = "Nom_Trab",columnDefinition="varchar(20)", nullable = false, unique = false)
+	@Column(name = "Nom_Trab", columnDefinition = "varchar(20)", nullable = false, unique = true)
 	private String nomTrab;
 	
-	@Column(name = "Des_Trab",columnDefinition="varchar(45)", nullable = false, unique = false)
+	@Column(name = "Des_Trab", columnDefinition = "varchar(45)", nullable = false, unique = false)
 	private String desTrab;
 	
-	
-	
+
+
 	public Long getIdTrab() {
 		return idTrab;
 	}
