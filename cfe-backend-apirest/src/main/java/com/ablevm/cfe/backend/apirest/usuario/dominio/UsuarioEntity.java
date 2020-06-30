@@ -37,7 +37,7 @@ public class UsuarioEntity implements Serializable{
 	private String passUsu;
 	
     @ManyToMany
-    private List <RoleEntity> roles;
+    private List <RoleEntity> roles;asdasd
 	
 	public String getIdUsu() {
 		return idUsu;
