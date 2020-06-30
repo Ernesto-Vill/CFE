@@ -14,7 +14,7 @@ public class AgenciaEntity implements Serializable {
 	@Id
 	@Column(name = "Id_Age", columnDefinition = "Int(3)", nullable = false, unique = true)
 	private Long idAge;
-	@Column(name = "Nom_Age", columnDefinition = "nvarchar(1)", nullable = false, unique = true)
+	@Column(name = "Nom_Age", columnDefinition = "varchar(45)", nullable = false, unique = true)
 	private String nomAge;
 
 

@@ -15,32 +15,32 @@ public class UbicacionEntity implements Serializable {
 
 
 	@Id
-	@Column(name = "Id_Ubi", nullable = false, unique = true)
+	@Column(name = "Id_Ubi", columnDefinition = "Int", nullable = false, unique = true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idUbi;
 	
-	@Column(name = "Call_Ubi", nullable = false, unique = false)
+	@Column(name = "Call_Ubi", columnDefinition = "varchar(45)", nullable = false, unique = true)
 	private String callUbi;
 	
-	@Column(name = "NoExt_Ubi", nullable = false, unique = false)
+	@Column(name = "NoExt_Ubi", columnDefinition = "varchar(10)", nullable = false, unique = false)
 	private String noExtUbi;
 	
-	@Column(name = "NoInt_Ubi", nullable = true, unique = false)
+	@Column(name = "NoInt_Ubi", columnDefinition = "varchar(10)", nullable = true, unique = false)
 	private String noIntUbi;
 	
-	@Column(name = "Col_Ubi", nullable = false, unique = false)
+	@Column(name = "Col_Ubi", columnDefinition = "varchar(35)", nullable = false, unique = false)
 	private String colUbi;
 	
-	@Column(name = "Mun_Ubi", nullable = false, unique = false)
+	@Column(name = "Mun_Ubi", columnDefinition = "varchar(35)", nullable = false, unique = false)
 	private String munUbi;
 	
-	@Column(name = "EntrCall_Ubi", nullable = true, unique = false)
+	@Column(name = "EntrCall_Ubi", columnDefinition = "varchar(40)", nullable = true, unique = false)
 	private String entrCallUbi;
 	
-	@Column(name = "Ref_Ubi", nullable = true, unique = false)
+	@Column(name = "Ref_Ubi", columnDefinition = "varchar(45)", nullable = true, unique = false)
 	private String refUbi;
 	
-	@Column(name = "Geo_Ubi", nullable = true, unique = false)
+	@Column(name = "Geo_Ubi", columnDefinition = "varchar(25)", nullable = true, unique = false)
 	private String geoUbi;
 	
 	
