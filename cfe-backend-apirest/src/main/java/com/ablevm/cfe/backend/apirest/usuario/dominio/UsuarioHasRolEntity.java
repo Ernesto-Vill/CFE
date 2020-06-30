@@ -1,4 +1,4 @@
-package com.ablevm.cfe.backend.apirest.cliente.dominio;
+package com.ablevm.cfe.backend.apirest.usuario.dominio;
 
 import java.io.Serializable;
 
