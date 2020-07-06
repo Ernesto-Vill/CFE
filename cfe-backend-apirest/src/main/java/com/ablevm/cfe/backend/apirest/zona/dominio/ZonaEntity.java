@@ -1,4 +1,4 @@
-package com.ablevm.cfe.backend.apirest.zona.domino;
+package com.ablevm.cfe.backend.apirest.zona.dominio;
 
 import java.io.Serializable;
 
