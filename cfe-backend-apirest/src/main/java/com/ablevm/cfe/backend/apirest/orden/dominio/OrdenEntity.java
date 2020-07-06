@@ -17,8 +17,8 @@ public class OrdenEntity implements Serializable {
 	@Column(name = "Fech_Ord", nullable = false, unique = false)
 	@Temporal(TemporalType.DATE)
 	private Date fechOrd;
-	@Column(name = "Rpu_Ord", columnDefinition = "Int", nullable = false, unique = false)
-	private Long repuOrd;
+	@Column(name = "Rpu_Ord",  columnDefinition = "varchar(15)", nullable = false, unique = false)
+	private String repuOrd;
 	@Column(name = "NCuen_Ord", columnDefinition = "varchar(17)", nullable = false, unique = false)
 	private String nCuentOrd;
 	@Column(name = "Tarifa_Ord", columnDefinition = "Int", nullable = false, unique = false)
@@ -68,7 +68,7 @@ public class OrdenEntity implements Serializable {
 		this.noOrd = noOrd;
 	}
 
-	public void setRepuOrd(Long repuOrd) {
+	public void setRepuOrd(String repuOrd) {
 		this.repuOrd = repuOrd;
 	}
 
@@ -84,7 +84,7 @@ public class OrdenEntity implements Serializable {
 		this.fechOrd = fechOrd;
 	}
 
-	public Long getRepuOrd() {
+	public String getRepuOrd() {
 		return repuOrd;
 	}
 
