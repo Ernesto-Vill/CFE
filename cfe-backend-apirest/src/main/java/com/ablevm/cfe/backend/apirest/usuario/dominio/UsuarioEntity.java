@@ -1,16 +1,14 @@
 package com.ablevm.cfe.backend.apirest.usuario.dominio;
 
-import com.ablevm.cfe.backend.apirest.role.dominio.*;
+
 
 import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import java.util.List;
 
 @Entity
 @Table(name = "usuario")
@@ -35,9 +33,6 @@ public class UsuarioEntity implements Serializable{
 	
 	@Column(name = "Pass_Usu",columnDefinition="varchar(16)", nullable = false, unique = false)
 	private String passUsu;
-	
-    @ManyToMany
-    private List <RoleEntity> roles;
 	
 	public String getIdUsu() {
 		return idUsu;
@@ -97,17 +92,6 @@ public class UsuarioEntity implements Serializable{
 	public void setPassUsu(String passUsu) {
 		this.passUsu = passUsu;
 	}
-
-
-	public List<RoleEntity> getRoles() {
-		return roles;
-	}
-
-
-	public void setRoles(List<RoleEntity> roles) {
-		this.roles = roles;
-	}
-
 
 	/**
 	 * 
