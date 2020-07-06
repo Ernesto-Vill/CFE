@@ -9,12 +9,12 @@ import javax.persistence.Table;
 @Table(name = "Material_Ocupado")
 public class MaterialOcupadoEntity {
 	@Id
-	@Column(name = "Id_Ord", length = 5, nullable = false, unique = false)
+	@Column(name = "Orden_Id_Ord", columnDefinition = "varchar(5)", nullable = false, unique = false)
 	private String idOrd;
 	// @Id
-	@Column(name = "Id_Mat", columnDefinition = "int(3)", nullable = false, unique = false)
+	@Column(name = "Material_Id_Mat", columnDefinition = "int", nullable = false, unique = false)
 	private int idMat;
-	@Column(name = "Cant_Mat", columnDefinition = "int(6)", nullable = false, unique = false)
+	@Column(name = "Cant_Mat", columnDefinition = "double(6)", nullable = false, unique = false)
 	private int cant_mat;
 
 }

@@ -11,13 +11,13 @@ import java.io.Serializable;
 public class ClienteEntity implements Serializable {
 
 	@Id
-	@Column(name = "IdClient", columnDefinition = "varchar(13)", nullable = false, unique = true)
+	@Column(name = "Id_Client", columnDefinition = "varchar(13)", nullable = false, unique = true)
 	private String idClient;
-	@Column(name = "ApPaClient", columnDefinition = "varchar(15)", nullable = true, unique = false)
+	@Column(name = "ApPa_Client", columnDefinition = "varchar(15)", nullable = true, unique = false)
 	private String apPaClient;
-	@Column(name = "ApMaClient", columnDefinition = "varchar(15)", nullable = true, unique = false)
+	@Column(name = "ApMa_Client", columnDefinition = "varchar(15)", nullable = true, unique = false)
 	private String apMaClient;
-	@Column(name = "NomClient", columnDefinition = "varchar(25)", nullable = true, unique = false)
+	@Column(name = "Nom_Client", columnDefinition = "varchar(25)", nullable = true, unique = false)
 	private String nomClient;
 	@Column(name = "Tel_Client", columnDefinition = "varchar(10)", nullable = true, unique = false)
 	private String telClient;

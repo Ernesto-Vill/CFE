@@ -12,10 +12,10 @@ import javax.persistence.Table;
 public class UsuarioHasRolEntity implements Serializable {
 
 	@Id
-	@Column(name = "Id_Usu",columnDefinition="varchar(10)", nullable = false, unique = false)
+	@Column(name = "Usuario_Id_Usu",columnDefinition="varchar(10)", nullable = false, unique = false)
 	private String idUsu;
 
-	@Column(name = "Id_Rol",columnDefinition="int(3)", nullable = false, unique = false)
+	@Column(name = "Rol_Id_Rol",columnDefinition="int(3)", nullable = false, unique = false)
 	private int idRol;
 
 	private static final long serialVersionUID = 1L;

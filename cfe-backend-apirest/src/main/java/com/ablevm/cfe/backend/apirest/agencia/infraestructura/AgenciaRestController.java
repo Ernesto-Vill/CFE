@@ -16,7 +16,7 @@ public class AgenciaRestController {
 	@Autowired
 	private AgenciaService agenciaService;
 	
-	@GetMapping("/agenica")
+	@GetMapping("/agencica")
 	public List<AgenciaEntity>index(){
 		return agenciaService.findAll();
 	}
