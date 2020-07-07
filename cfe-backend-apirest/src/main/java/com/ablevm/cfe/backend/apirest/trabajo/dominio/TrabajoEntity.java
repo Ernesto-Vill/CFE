@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "trabajo")
 public class TrabajoEntity implements Serializable{
@@ -24,6 +25,21 @@ public class TrabajoEntity implements Serializable{
 	@Column(name = "Des_Trab", columnDefinition = "varchar(45)", nullable = false, unique = false)
 	private String desTrab;
 	
+	//@OneToMany(mappedBy = "trabajo")
+	//@JsonManagedReference
+    //private List<OrdenEntity> ordenes;
+
+
+
+    //public List<OrdenEntity> getOrdenes() {
+    //    return ordenes;
+    //}
+
+
+
+    //public void setOrdenes(List<OrdenEntity> ordenes) {
+    //    this.ordenes = ordenes;
+    //}
 
 
 	public Long getIdTrab() {
