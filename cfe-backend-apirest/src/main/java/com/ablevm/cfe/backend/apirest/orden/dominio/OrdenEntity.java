@@ -59,20 +59,7 @@ public class OrdenEntity implements Serializable {
 	private String rpeOrd;
 	@Column(name = "IdentN_Ord", columnDefinition = "varchar(10)", nullable = true, unique = false)
 	private String identNOrd;
-	
-<<<<<<< HEAD
-	  @ManyToOne(fetch=FetchType.LAZY)
-	  @JoinColumn(name="Trabajo_Id_trab")
-	  private TrabajoEntity trabajo;
 
-	public TrabajoEntity getTrabajo() {
-		return trabajo;
-	}
-
-	public void setTrabajo(TrabajoEntity trabajo) {
-		this.trabajo = trabajo;
-	}
-=======
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	@JoinColumn(name = "Usuario_Id_Usu")
@@ -102,7 +89,7 @@ public class OrdenEntity implements Serializable {
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	@JoinColumn(name = "Agencia_Id_Age")
 	private AgenciaEntity agencia;
->>>>>>> branch 'master' of https://github.com/Ernesto-Vill/CFE.git
+
 
 	public String getIdOrd() {
 		return idOrd;

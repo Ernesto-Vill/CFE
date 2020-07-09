@@ -3,24 +3,24 @@ package com.ablevm.cfe.backend.apirest.usuario.dominio;
 
 
 import java.io.Serializable;
-<<<<<<< HEAD
+
 import java.util.List;
-=======
+
 import java.util.Set;
->>>>>>> branch 'master' of https://github.com/Ernesto-Vill/CFE.git
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-<<<<<<< HEAD
+
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-=======
+
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
->>>>>>> branch 'master' of https://github.com/Ernesto-Vill/CFE.git
+
 import javax.persistence.Table;
 
 import com.ablevm.cfe.backend.apirest.role.dominio.RoleEntity;
@@ -51,8 +51,7 @@ public class UsuarioEntity implements Serializable{
 	@Column(name = "Pass_Usu",columnDefinition="varchar(16)", nullable = false, unique = false)
 	private String passUsu;
 	
-<<<<<<< HEAD
-=======
+
 	@ManyToMany
 	@JoinTable(name="usuario_has_rol"
 			,joinColumns=@JoinColumn(name="Usuario_Id_Usu")
@@ -69,7 +68,7 @@ public class UsuarioEntity implements Serializable{
 	public void setRoles(Set<RoleEntity> roles) {
 		this.roles = roles;
 	}
->>>>>>> branch 'master' of https://github.com/Ernesto-Vill/CFE.git
+
 
 
 	public String getIdUsu() {

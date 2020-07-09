@@ -14,12 +14,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-<<<<<<< HEAD
+
 import com.ablevm.cfe.backend.apirest.usuario.dominio.UsuarioEntity;
 import com.ablevm.cfe.backend.apirest.orden.dominio.*;
-=======
 
->>>>>>> branch 'master' of https://github.com/Ernesto-Vill/CFE.git
 @Entity
 @Table(name = "trabajo")
 public class TrabajoEntity implements Serializable{
@@ -35,7 +33,7 @@ public class TrabajoEntity implements Serializable{
 	@Column(name = "Des_Trab", columnDefinition = "varchar(45)", nullable = false, unique = false)
 	private String desTrab;
 	
-<<<<<<< HEAD
+
 	@OneToMany(mappedBy = "trabajo")
 	private List<OrdenEntity> ordenes;
 
@@ -51,7 +49,6 @@ public class TrabajoEntity implements Serializable{
 		this.ordenes = ordenes;
 	}
 
-=======
 	//@OneToMany(mappedBy = "trabajo")
 	//@JsonManagedReference
     //private List<OrdenEntity> ordenes;
@@ -67,7 +64,7 @@ public class TrabajoEntity implements Serializable{
     //public void setOrdenes(List<OrdenEntity> ordenes) {
     //    this.ordenes = ordenes;
     //}
->>>>>>> branch 'master' of https://github.com/Ernesto-Vill/CFE.git
+
 
 
 	public Long getIdTrab() {
