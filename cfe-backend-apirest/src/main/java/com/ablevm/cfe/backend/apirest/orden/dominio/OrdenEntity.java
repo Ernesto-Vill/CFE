@@ -2,7 +2,6 @@ package com.ablevm.cfe.backend.apirest.orden.dominio;
 
 import java.io.Serializable;
 import java.util.Date;
-import com.ablevm.cfe.backend.apirest.trabajo.dominio.*;
 import javax.persistence.*;
 
 import com.ablevm.cfe.backend.apirest.agencia.dominio.AgenciaEntity;
@@ -59,50 +58,36 @@ public class OrdenEntity implements Serializable {
 	private String rpeOrd;
 	@Column(name = "IdentN_Ord", columnDefinition = "varchar(10)", nullable = true, unique = false)
 	private String identNOrd;
-	
-<<<<<<< HEAD
-	  @ManyToOne(fetch=FetchType.LAZY)
-	  @JoinColumn(name="Trabajo_Id_trab")
-	  private TrabajoEntity trabajo;
 
-	public TrabajoEntity getTrabajo() {
-		return trabajo;
-	}
-
-	public void setTrabajo(TrabajoEntity trabajo) {
-		this.trabajo = trabajo;
-	}
-=======
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@JoinColumn(name = "Usuario_Id_Usu")
 	private UsuarioEntity usuario;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@JoinColumn(name = "Trabajo_Id_Trab")
 	private TrabajoEntity trabajo;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@JoinColumn(name = "Ubicacion_Id_Ubi")
 	private UbicacionEntity ubicacion;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@JoinColumn(name = "Cliente_Id_client")
 	private ClienteEntity cliente;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@JoinColumn(name = "Zona_Id_Zon")
 	private ZonaEntity zona;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@JoinColumn(name = "Agencia_Id_Age")
 	private AgenciaEntity agencia;
->>>>>>> branch 'master' of https://github.com/Ernesto-Vill/CFE.git
 
 	public String getIdOrd() {
 		return idOrd;
@@ -303,8 +288,6 @@ public class OrdenEntity implements Serializable {
 	public void setAgencia(AgenciaEntity agencia) {
 		this.agencia = agencia;
 	}
-
-
 
 	private static final long serialVersionUID = 1L;
 
