@@ -1,14 +1,21 @@
 package com.ablevm.cfe.backend.apirest.trabajo.dominio;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.ablevm.cfe.backend.apirest.usuario.dominio.UsuarioEntity;
+import com.ablevm.cfe.backend.apirest.orden.dominio.*;
 @Entity
 @Table(name = "trabajo")
 public class TrabajoEntity implements Serializable{
@@ -24,6 +31,21 @@ public class TrabajoEntity implements Serializable{
 	@Column(name = "Des_Trab", columnDefinition = "varchar(45)", nullable = false, unique = false)
 	private String desTrab;
 	
+	@OneToMany(mappedBy = "trabajo")
+	private List<OrdenEntity> ordenes;
+
+	
+	
+	public List<OrdenEntity> getOrdenes() {
+		return ordenes;
+	}
+
+
+
+	public void setOrdenes(List<OrdenEntity> ordenes) {
+		this.ordenes = ordenes;
+	}
+
 
 
 	public Long getIdTrab() {

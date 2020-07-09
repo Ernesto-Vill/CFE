@@ -2,7 +2,7 @@ package com.ablevm.cfe.backend.apirest.orden.dominio;
 
 import java.io.Serializable;
 import java.util.Date;
-
+import com.ablevm.cfe.backend.apirest.trabajo.dominio.*;
 import javax.persistence.*;
 
 @Entity
@@ -51,6 +51,18 @@ public class OrdenEntity implements Serializable {
 	private String rpeOrd;
 	@Column(name = "IdentN_Ord", columnDefinition = "varchar(10)", nullable = true, unique = false)
 	private String identNOrd;
+	
+	  @ManyToOne(fetch=FetchType.LAZY)
+	  @JoinColumn(name="Trabajo_Id_trab")
+	  private TrabajoEntity trabajo;
+
+	public TrabajoEntity getTrabajo() {
+		return trabajo;
+	}
+
+	public void setTrabajo(TrabajoEntity trabajo) {
+		this.trabajo = trabajo;
+	}
 
 	public String getIdOrd() {
 		return idOrd;
