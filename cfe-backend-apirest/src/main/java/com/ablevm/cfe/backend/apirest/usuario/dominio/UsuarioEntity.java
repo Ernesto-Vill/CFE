@@ -15,6 +15,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import com.ablevm.cfe.backend.apirest.role.dominio.RoleEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "usuario")
@@ -40,6 +41,7 @@ public class UsuarioEntity implements Serializable {
 	private String passUsu;
 
 	@ManyToMany
+	@JsonIgnore//Si nos causa problemas al autentificar los roles, borrar esta linea
 	@JoinTable(name = "usuario_has_rol", joinColumns = @JoinColumn(name = "Usuario_Id_Usu"), inverseJoinColumns = @JoinColumn(name = "Rol_Id_Rol"))
 	private Set<RoleEntity> roles;
 
@@ -89,10 +91,6 @@ public class UsuarioEntity implements Serializable {
 
 	public void setApMaUsu(String apMaUsu) {
 		this.apMaUsu = apMaUsu;
-	}
-
-	public String getPassUsu() {
-		return passUsu;
 	}
 
 	public void setPassUsu(String passUsu) {

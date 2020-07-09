@@ -2,6 +2,8 @@ package com.ablevm.cfe.backend.apirest.orden.dominio;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+
 import javax.persistence.*;
 
 import com.ablevm.cfe.backend.apirest.agencia.dominio.AgenciaEntity;
@@ -58,6 +60,28 @@ public class OrdenEntity implements Serializable {
 	private String rpeOrd;
 	@Column(name = "IdentN_Ord", columnDefinition = "varchar(10)", nullable = true, unique = false)
 	private String identNOrd;
+	
+	@OneToMany(mappedBy = "orden")
+    private List<MaterialDesmanteladoEntity> materialDesmantelado;
+
+	public List<MaterialDesmanteladoEntity> getMaterialDesmantelado() {
+		return materialDesmantelado;
+	}
+
+	public void setMaterialDesmantelado(List<MaterialDesmanteladoEntity> materialDesmantelado) {
+		this.materialDesmantelado = materialDesmantelado;
+	}
+
+	@OneToMany(mappedBy = "orden")
+    private List<MaterialOcupadoEntity> materialOcupado;
+
+	public List<MaterialOcupadoEntity> getMaterialOcupado() {
+		return materialOcupado;
+	}
+
+	public void setMaterialOcupado(List<MaterialOcupadoEntity> materialOcupado) {
+		this.materialOcupado = materialOcupado;
+	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
