@@ -5,6 +5,14 @@ import java.util.Date;
 import com.ablevm.cfe.backend.apirest.trabajo.dominio.*;
 import javax.persistence.*;
 
+import com.ablevm.cfe.backend.apirest.agencia.dominio.AgenciaEntity;
+import com.ablevm.cfe.backend.apirest.cliente.dominio.ClienteEntity;
+import com.ablevm.cfe.backend.apirest.trabajo.dominio.TrabajoEntity;
+import com.ablevm.cfe.backend.apirest.ubicacion.dominio.UbicacionEntity;
+import com.ablevm.cfe.backend.apirest.usuario.dominio.UsuarioEntity;
+import com.ablevm.cfe.backend.apirest.zona.dominio.ZonaEntity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "orden")
 public class OrdenEntity implements Serializable {
@@ -17,8 +25,8 @@ public class OrdenEntity implements Serializable {
 	@Column(name = "Fech_Ord", nullable = false, unique = false)
 	@Temporal(TemporalType.DATE)
 	private Date fechOrd;
-	@Column(name = "Rpu_Ord", columnDefinition = "Int", nullable = false, unique = false)
-	private Long repuOrd;
+	@Column(name = "Rpu_Ord", columnDefinition = "varchar(15)", nullable = false, unique = false)
+	private String repuOrd;
 	@Column(name = "NCuen_Ord", columnDefinition = "varchar(17)", nullable = false, unique = false)
 	private String nCuentOrd;
 	@Column(name = "Tarifa_Ord", columnDefinition = "Int", nullable = false, unique = false)
@@ -52,6 +60,7 @@ public class OrdenEntity implements Serializable {
 	@Column(name = "IdentN_Ord", columnDefinition = "varchar(10)", nullable = true, unique = false)
 	private String identNOrd;
 	
+<<<<<<< HEAD
 	  @ManyToOne(fetch=FetchType.LAZY)
 	  @JoinColumn(name="Trabajo_Id_trab")
 	  private TrabajoEntity trabajo;
@@ -63,6 +72,37 @@ public class OrdenEntity implements Serializable {
 	public void setTrabajo(TrabajoEntity trabajo) {
 		this.trabajo = trabajo;
 	}
+=======
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@JoinColumn(name = "Usuario_Id_Usu")
+	private UsuarioEntity usuario;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@JoinColumn(name = "Trabajo_Id_Trab")
+	private TrabajoEntity trabajo;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@JoinColumn(name = "Ubicacion_Id_Ubi")
+	private UbicacionEntity ubicacion;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@JoinColumn(name = "Cliente_Id_client")
+	private ClienteEntity cliente;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@JoinColumn(name = "Zona_Id_Zon")
+	private ZonaEntity zona;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@JoinColumn(name = "Agencia_Id_Age")
+	private AgenciaEntity agencia;
+>>>>>>> branch 'master' of https://github.com/Ernesto-Vill/CFE.git
 
 	public String getIdOrd() {
 		return idOrd;
@@ -80,7 +120,7 @@ public class OrdenEntity implements Serializable {
 		this.noOrd = noOrd;
 	}
 
-	public void setRepuOrd(Long repuOrd) {
+	public void setRepuOrd(String repuOrd) {
 		this.repuOrd = repuOrd;
 	}
 
@@ -96,7 +136,7 @@ public class OrdenEntity implements Serializable {
 		this.fechOrd = fechOrd;
 	}
 
-	public Long getRepuOrd() {
+	public String getRepuOrd() {
 		return repuOrd;
 	}
 
@@ -215,6 +255,56 @@ public class OrdenEntity implements Serializable {
 	public void setIdentNOrd(String identNOrd) {
 		this.identNOrd = identNOrd;
 	}
+
+	public UsuarioEntity getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(UsuarioEntity usuario) {
+		this.usuario = usuario;
+	}
+
+	public TrabajoEntity getTrabajo() {
+		return trabajo;
+	}
+
+	public void setTrabajo(TrabajoEntity trabajo) {
+		this.trabajo = trabajo;
+	}
+
+	public UbicacionEntity getUbicacion() {
+		return ubicacion;
+	}
+
+	public void setUbicacion(UbicacionEntity ubicacion) {
+		this.ubicacion = ubicacion;
+	}
+
+	public ClienteEntity getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(ClienteEntity cliente) {
+		this.cliente = cliente;
+	}
+
+	public ZonaEntity getZona() {
+		return zona;
+	}
+
+	public void setZona(ZonaEntity zona) {
+		this.zona = zona;
+	}
+
+	public AgenciaEntity getAgencia() {
+		return agencia;
+	}
+
+	public void setAgencia(AgenciaEntity agencia) {
+		this.agencia = agencia;
+	}
+
+
 
 	private static final long serialVersionUID = 1L;
 
