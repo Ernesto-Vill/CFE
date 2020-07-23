@@ -21,5 +21,22 @@ public class UsuarioServiceImpl implements UsuarioService{
 		return (List<UsuarioEntity>) usuarioDao.findAll();
 	}
 
-	
+	@Override
+	@Transactional
+	public void save(UsuarioEntity usuarioEntity) {
+		usuarioDao.save(usuarioEntity);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public UsuarioEntity findById(String id) {
+		return usuarioDao.findById(id).orElse(null);
+	}
+
+	@Override
+	@Transactional
+	public void delete(UsuarioEntity usuarioEntity) {
+		usuarioDao.delete(usuarioEntity);
+		
+	}
 }
