@@ -5,11 +5,17 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "cliente")
 public class ClienteEntity implements Serializable {
 
+	
+	@NotBlank(message = "Name may not be blank")
 	@Id
 	@Column(name = "Id_Client", columnDefinition = "varchar(13)", nullable = false, unique = true)
 	private String idClient;
