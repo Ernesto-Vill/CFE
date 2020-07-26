@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ablevm.cfe.backend.apirest.zona.dominio.ZonaEntity;
+import com.ablevm.cfe.backend.apirest.zona.dominio.Zona;
 import com.ablevm.cfe.backend.apirest.zona.infraestructura.ZonaService;
 
 @RestController
@@ -18,7 +18,7 @@ public class ZonaRestController {
 	private ZonaService zonaService;
 	
 	@GetMapping("/zona")
-	public List<ZonaEntity>index(){
+	public List<Zona>index(){
 		return zonaService.findAll();
 	}
 }

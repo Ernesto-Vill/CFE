@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ablevm.cfe.backend.apirest.role.dominio.RoleEntity;
+import com.ablevm.cfe.backend.apirest.role.dominio.Role;
 
 @Service
 public class RoleServiceImpl implements RoleService{
@@ -16,9 +16,9 @@ public class RoleServiceImpl implements RoleService{
 	
 	@Override
 	@Transactional(readOnly = true)
-	public List<RoleEntity> findAll() {
+	public List<Role> findAll() {
 		
-		return (List<RoleEntity>) roleDao.findAll();
+		return (List<Role>) roleDao.findAll();
 	}
 
 	

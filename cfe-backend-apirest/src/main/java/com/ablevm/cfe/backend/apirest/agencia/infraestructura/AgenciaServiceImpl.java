@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ablevm.cfe.backend.apirest.agencia.dominio.AgenciaEntity;
+import com.ablevm.cfe.backend.apirest.agencia.dominio.Agencia;
 
 @Service
 public class AgenciaServiceImpl implements AgenciaService{
@@ -16,9 +16,9 @@ public class AgenciaServiceImpl implements AgenciaService{
 	
 	@Override
 	@Transactional(readOnly = true)
-	public List<AgenciaEntity> findAll() {
+	public List<Agencia> findAll() {
 		
-		return (List<AgenciaEntity>) agenciaDao.findAll();
+		return (List<Agencia>) agenciaDao.findAll();
 	}
 
 	

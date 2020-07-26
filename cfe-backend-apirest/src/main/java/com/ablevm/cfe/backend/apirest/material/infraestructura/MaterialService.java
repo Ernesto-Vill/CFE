@@ -2,12 +2,12 @@ package com.ablevm.cfe.backend.apirest.material.infraestructura;
 
 import java.util.List;
 
-import com.ablevm.cfe.backend.apirest.material.dominio.MaterialEntity;
+import com.ablevm.cfe.backend.apirest.material.dominio.Material;
 
 public interface MaterialService {
  
-	public List<MaterialEntity>findAll();
-	public void save(MaterialEntity materialEntity);
-	public MaterialEntity findById(Long id);
-	public void delete(MaterialEntity materialEntity);
+	public List<Material>findAll();
+	public void save(Material material);
+	public Material findById(int id);
+	public void delete(Material material);
 }

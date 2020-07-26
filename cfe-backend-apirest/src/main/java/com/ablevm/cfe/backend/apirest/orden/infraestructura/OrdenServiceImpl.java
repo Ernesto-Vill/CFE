@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ablevm.cfe.backend.apirest.orden.dominio.OrdenEntity;
+import com.ablevm.cfe.backend.apirest.orden.dominio.Orden;
 
 @Service
 public class OrdenServiceImpl implements OrdenService{
@@ -16,9 +16,9 @@ public class OrdenServiceImpl implements OrdenService{
 	
 	@Override
 	@Transactional(readOnly = true)
-	public List<OrdenEntity> findAll() {
+	public List<Orden> findAll() {
 		
-		return (List<OrdenEntity>) ordenDao.findAll();
+		return (List<Orden>) ordenDao.findAll();
 	}
 
 	

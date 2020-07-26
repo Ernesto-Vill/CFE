@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ablevm.cfe.backend.apirest.material.dominio.MaterialEntity;
+import com.ablevm.cfe.backend.apirest.material.dominio.Material;
 import com.ablevm.cfe.backend.apirest.material.infraestructura.MaterialService;
 
 @CrossOrigin(origins= {"http://localhost:4200"})
@@ -27,38 +27,38 @@ public class MaterialRestController {
 	private MaterialService materialService;
 	
 	@GetMapping("/material")
-	public List<MaterialEntity>index(){
+	public List<Material>index(){
 		return materialService.findAll();
 	}
 	
 	@GetMapping("/material/{id}")
-	public MaterialEntity show(@PathVariable Long id) {
+	public Material show(@PathVariable Integer id) {
 		return this.materialService.findById(id);
 	}
 
 	@PostMapping("/material")
 	@ResponseStatus(HttpStatus.CREATED)
-	public MaterialEntity create(@RequestBody MaterialEntity materialEntity) {
-		this.materialService.save(materialEntity);
-		return materialEntity;
+	public Material create(@RequestBody Material material) {
+		this.materialService.save(material);
+		return material;
 	}
 
 	@PutMapping("/material/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
-	public MaterialEntity update(@RequestBody MaterialEntity materialEntity, @PathVariable Long id) {
-		MaterialEntity currentMaterialEntity = this.materialService.findById(id);
-		currentMaterialEntity.setNomMat(materialEntity.getNomMat());
-		currentMaterialEntity.setDescMat(materialEntity.getDescMat());
-		currentMaterialEntity.setUniMat(materialEntity.getUniMat());
-		this.materialService.save(currentMaterialEntity);
-		return currentMaterialEntity;
+	public Material update(@RequestBody Material material, @PathVariable Integer id) {
+		Material currentMaterial = this.materialService.findById(id);
+		currentMaterial.setNomMat(material.getNomMat());
+		currentMaterial.setDescMat(material.getDescMat());
+		currentMaterial.setUniMat(material.getUniMat());
+		this.materialService.save(currentMaterial);
+		return currentMaterial;
 	}
 	
 	@DeleteMapping("/material/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable Long id) {
-		MaterialEntity currentMaterialEntity = this.materialService.findById(id);
-		this.materialService.delete(currentMaterialEntity);
+	public void delete(@PathVariable Integer id) {
+		Material currentMaterial = this.materialService.findById(id);
+		this.materialService.delete(currentMaterial);
 	}
 
 }

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ablevm.cfe.backend.apirest.orden.dominio.OrdenEntity;
+import com.ablevm.cfe.backend.apirest.orden.dominio.Orden;
 import com.ablevm.cfe.backend.apirest.orden.infraestructura.OrdenService;
 
 @CrossOrigin(origins= {"http://localhost:4200"})
@@ -20,7 +20,7 @@ public class OrdenRestController {
 	private OrdenService ordenService;
 	
 	@GetMapping("/orden")
-	public List<OrdenEntity>index(){
+	public List<Orden>index(){
 		return ordenService.findAll();
 	}
 

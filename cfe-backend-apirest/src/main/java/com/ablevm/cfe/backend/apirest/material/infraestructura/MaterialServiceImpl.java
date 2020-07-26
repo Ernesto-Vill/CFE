@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ablevm.cfe.backend.apirest.material.dominio.MaterialEntity;
+import com.ablevm.cfe.backend.apirest.material.dominio.Material;
 
 
 @Service
@@ -17,25 +17,25 @@ public class MaterialServiceImpl implements MaterialService{
 	
 	@Override
 	@Transactional(readOnly = true)
-	public List<MaterialEntity> findAll() {
-		return (List<MaterialEntity>) materialDao.findAll();
+	public List<Material> findAll() {
+		return (List<Material>) materialDao.findAll();
 	}
 	@Override
 	@Transactional
-	public void save(MaterialEntity materialEntity) {
-		materialDao.save(materialEntity);
+	public void save(Material material) {
+		materialDao.save(material);
 	}
 
 	@Override
 	@Transactional(readOnly = true)
-	public MaterialEntity findById(Long id) {
+	public Material findById(int id) {
 		return materialDao.findById(id).orElse(null);
 	}
 
 	@Override
 	@Transactional
-	public void delete(MaterialEntity materialEntity) {
-		materialDao.delete(materialEntity);
+	public void delete(Material material) {
+		materialDao.delete(material);
 		
 	}
 }

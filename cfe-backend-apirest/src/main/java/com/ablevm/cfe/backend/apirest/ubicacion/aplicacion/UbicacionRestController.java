@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ablevm.cfe.backend.apirest.ubicacion.dominio.UbicacionEntity;
+import com.ablevm.cfe.backend.apirest.ubicacion.dominio.Ubicacion;
 import com.ablevm.cfe.backend.apirest.ubicacion.infraestructura.UbicacionService;
 
 @RestController
@@ -18,7 +18,7 @@ public class UbicacionRestController {
 	private UbicacionService ubicacionService;
 	
 	@GetMapping("/ubicacion")
-	public List<UbicacionEntity>index(){
+	public List<Ubicacion>index(){
 		return ubicacionService.findAll();
 	}
 }

@@ -2,8 +2,8 @@ package com.ablevm.cfe.backend.apirest.orden.infraestructura;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.ablevm.cfe.backend.apirest.orden.dominio.OrdenEntity;
+import com.ablevm.cfe.backend.apirest.orden.dominio.Orden;
 
-public interface OrdenDao extends CrudRepository<OrdenEntity,String> {
+public interface OrdenDao extends CrudRepository<Orden,String> {
 
 }

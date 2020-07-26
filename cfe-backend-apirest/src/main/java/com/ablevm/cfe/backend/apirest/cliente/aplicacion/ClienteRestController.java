@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ablevm.cfe.backend.apirest.cliente.dominio.ClienteEntity;
+import com.ablevm.cfe.backend.apirest.cliente.dominio.Cliente;
 import com.ablevm.cfe.backend.apirest.cliente.infraestructura.ClienteService;
 
 @CrossOrigin(origins= {"http://localhost:4200"})
@@ -29,41 +29,41 @@ public class ClienteRestController {
 	private ClienteService clienteService;
 	
 	@GetMapping("/cliente")
-	public List<ClienteEntity>index(){
+	public List<Cliente>index(){
 		return clienteService.findAll();
 	}
 	
 	@GetMapping("/cliente/{id}")
-	public ClienteEntity show(@PathVariable String id) {
+	public Cliente show(@PathVariable String id) {
 		return this.clienteService.findById(id);
 	}
 
 	@PostMapping("/cliente")
 	@ResponseStatus(HttpStatus.CREATED)
-	public ClienteEntity create(@RequestBody ClienteEntity clienteEntity) {
-		this.clienteService.save(clienteEntity);
+	public Cliente create(@RequestBody Cliente cliente) {
+		this.clienteService.save(cliente);
 		
-		return clienteEntity;
+		return cliente;
 	}
 
 	@PutMapping("/cliente/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
-	public ClienteEntity update(@RequestBody ClienteEntity clienteEntity, @PathVariable String id) {
-		ClienteEntity currentClienteEntity = this.clienteService.findById(id);
-		currentClienteEntity.setNomClient(clienteEntity.getNomClient());
-		currentClienteEntity.setApPaClient(clienteEntity.getApPaClient());
-		currentClienteEntity.setApMaClient(clienteEntity.getApMaClient());
-		currentClienteEntity.setEmailClient(clienteEntity.getEmailClient());
-		currentClienteEntity.setTelClient(clienteEntity.getTelClient());
-		this.clienteService.save(currentClienteEntity);
-		return currentClienteEntity;
+	public Cliente update(@RequestBody Cliente cliente, @PathVariable String id) {
+		Cliente currentCliente = this.clienteService.findById(id);
+		currentCliente.setNomClient(cliente.getNomClient());
+		currentCliente.setApPaClient(cliente.getApPaClient());
+		currentCliente.setApMaClient(cliente.getApMaClient());
+		currentCliente.setEmailClient(cliente.getEmailClient());
+		currentCliente.setTelClient(cliente.getTelClient());
+		this.clienteService.save(currentCliente);
+		return currentCliente;
 	}
 
 	@DeleteMapping("/cliente/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable String id) {
-		ClienteEntity currentClienteEntity = this.clienteService.findById(id);
-		this.clienteService.delete(currentClienteEntity);
+		Cliente currentCliente = this.clienteService.findById(id);
+		this.clienteService.delete(currentCliente);
 	}
 	
 }

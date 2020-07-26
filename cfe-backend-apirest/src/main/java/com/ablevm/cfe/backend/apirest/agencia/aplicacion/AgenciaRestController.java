@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ablevm.cfe.backend.apirest.agencia.dominio.AgenciaEntity;
+import com.ablevm.cfe.backend.apirest.agencia.dominio.Agencia;
 import com.ablevm.cfe.backend.apirest.agencia.infraestructura.AgenciaService;
 
 @RestController
@@ -18,7 +18,7 @@ public class AgenciaRestController {
 	private AgenciaService agenciaService;
 	
 	@GetMapping("/agencia")
-	public List<AgenciaEntity>index(){
+	public List<Agencia>index(){
 		return agenciaService.findAll();
 	}
 
